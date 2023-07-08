@@ -1,0 +1,19 @@
+{
+  "name": "idp2p-wallet-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@picocss/pico": "^1.5.10"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.1",
+    "vite": "^4.4.0"
+  }
+}
