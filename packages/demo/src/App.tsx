@@ -1,34 +1,17 @@
 import { useCreateWalletForm, useWallet } from "@idp2p/wallet-react-core";
-import { useFormContext } from "react-hook-form";
+import errorMsg from "./components/errorMsg";
 
 function App() {
   const { wallet } = useWallet();
-  const { CreateWalletForm, PasswordInput, UsernameInput, SubmitButton } = useCreateWalletForm();
-  const FormContent = () => {
-    const formCtx = useFormContext();
-    return (
-      <>
-        <div>
-          <label>
-            Username
-          </label>
-          <UsernameInput />
-          <label>
-            Password
-          </label>
-          <PasswordInput />
-        </div>
-        <div>
-          <SubmitButton className="" />
-        </div>
-        {formCtx.formState?.errors && <>{formCtx.formState?.errors.password?.message}</>}
-      </>);
-  }
+  const { onSubmit, pwdProps, PwdErrorMsg } = useCreateWalletForm();
+
   if (wallet === null) {
     return (
-      <CreateWalletForm>
-        <FormContent />
-      </CreateWalletForm>);
+      <form onSubmit={onSubmit}>
+        <input {...pwdProps} aria-invalid={pwdProps.inValid} />
+        <PwdErrorMsg render={errorMsg} /> 
+        <input type="submit" />
+      </form>);
   }
   return (
     <>

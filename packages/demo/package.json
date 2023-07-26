@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@picocss/pico": "^1.5.10"
+    "@picocss/pico": "^1.5.10",
+    "@idp2p/wallet-react-core": "0.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.1",
