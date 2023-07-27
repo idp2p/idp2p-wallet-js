@@ -2,23 +2,23 @@ import { z } from "zod";
 import { useTranslation } from "react-i18next";
 import { zodResolver } from '@hookform/resolvers/zod';
 import {  useForm } from 'react-hook-form';
-import { useWallet } from './useWallet';
+//import { useWallet } from './useWallet';
 import { ReactNode } from "react";
 
 export const createWalletSchema = z.object({
-    username: z.string().min(3),
+    //username: z.string().min(3),
     password: z.string().min(4).max(6)
 });
 
 type CreateWalletInput = z.infer<typeof createWalletSchema>;
 
 export default function useCreateWalletForm() {
-    const { setWallet } = useWallet();
+    //const { setWallet } = useWallet();
     const form = useForm<CreateWalletInput>({ resolver: zodResolver(createWalletSchema) });
     const { t } = useTranslation();
     async function handleCreateWallet(input: CreateWalletInput) {
         console.log(input);
-        setWallet({ session: undefined })
+        //setWallet({ session: undefined })
     }
     const pwdProps = {
         inValid: Boolean(form.formState?.errors.password),
