@@ -7,15 +7,16 @@ function App() {
 
   if (wallet === null) {
     return (
-      <form onSubmit={f.onSubmit} style={{minWidth: "480px"}}>
+      <form onSubmit={f.onSubmit} style={{ minWidth: "480px" }}>
         <label htmlFor="password">{f.pwdInput.label}</label>
-        <input {...f.pwdInput.props}/>
-        <f.ErrorMsg field="password" render={errorMsg} /> 
+        <input {...f.pwdInput.props} />
+        <f.ErrorMsg field="password" render={errorMsg} />
         <label htmlFor="confirm_password">{f.confirmPwdInput.label}</label>
-        <input {...f.confirmPwdInput.props}/>
-        <f.ErrorMsg field="confirm_password" render={errorMsg} /> 
+        <input {...f.confirmPwdInput.props} />
+        <f.ErrorMsg field="confirm_password" render={errorMsg} />
         <button {...f.submitButton.props}>{f.submitButton.text}</button>
-      </form>);
+      </form>
+    );
   }
   return (
     <>

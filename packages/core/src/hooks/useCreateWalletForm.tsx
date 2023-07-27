@@ -6,9 +6,11 @@ import { get, useForm } from 'react-hook-form';
 import { ReactNode } from "react";
 
 export const createWalletSchema = z.object({
-    //username: z.string().min(3),
     password: z.string().min(8).max(16),
-    confirm_password: z.string().min(8).max(16)
+    confirm_password: z.string()
+}).refine((data) => data.password === data.confirm_password, {
+    message: "Passwords don't match",
+    path: ["confirm_password"]
 });
 
 type CreateWalletInput = z.infer<typeof createWalletSchema>;
@@ -18,6 +20,8 @@ export default function useCreateWalletForm() {
     const form = useForm<CreateWalletInput>({ mode: "onChange", resolver: zodResolver(createWalletSchema) });
     const { t } = useTranslation();
     const sleep = (ms: any) => new Promise(resolve => setTimeout(resolve, ms));
+    //const passwordMatch = form.watch(z=> z.password === z.confirm_password);
+
     async function handleCreateWallet(input: CreateWalletInput) {
         await sleep(1000);
 
@@ -78,79 +82,9 @@ export default function useCreateWalletForm() {
         pwdInput,
         confirmPwdInput,
         submitButton,
-        isValid: form.formState.isValid,
-        isSubmitting: form.formState.isSubmitting
+        formState: form.formState
     };
 
-    /*const usernameInputProps = {
-        label: t("Username"),
-        placeholder: t("Type your username")
-    };
-    const submitButtonProps = {
-        text: t("Create"),
-        tooltip: t("Create wallet")
-    };
-    const CreateWalletForm = useMemo(() => ({ children }: { children: ReactNode }) => {
-        const form = useForm<CreateWalletInput>({ resolver: zodResolver(createWalletSchema) });
-        async function handleCreateWallet(input: CreateWalletInput) {
-            console.log(input);
-            setWallet({ session: undefined })
-        }
-        return (
-            <FormProvider  {...form}>
-                <form onSubmit={form.handleSubmit(handleCreateWallet)}>
-                    {children}
-                </form>
-            </FormProvider>
-
-        );
-    }, []);
-    const UsernameInput = useMemo(() => () => {
-        const { register } = useFormContext()
-        return (
-            <>
-                <label>
-                    Username
-                </label>
-                <input type="text" placeholder="Enter your username" {...register("username")} />
-            </>);
-    }, []);
-    const PasswordInput = useMemo(() => () => {
-        const { register } = useFormContext()
-        return (<>
-            <label>
-                Password
-            </label>
-            <input type="password" placeholder="Enter your password" {...register("password")} />
-        </>);
-    }, []);
-
-   
-    const ConfirmPasswordInput = useMemo(() => () => {
-        const { register } = useFormContext()
-        return (<>
-            <label>
-                Password Confirm
-            </label>
-            <input type="password" placeholder="Enter your password" {...register("password")} />
-        </>);
-    }, []);
-
-    const SubmitButton = useMemo(() => (props: SubmitButtonProps) => {
-        let ref = useRef(null);
-        let { buttonProps } = useButton(props, ref);
-        return <button {...buttonProps} ref={ref} type="submit">{submitButtonProps.text}</button>
-    }, []);
-    
-    return {
-        CreateWalletForm,
-        UsernameInput,
-        PasswordInput,
-        ConfirmPasswordInput,
-        SubmitButton,
-        usernameInputProps,
-        submitButtonProps
-    };*/
 }
 
 

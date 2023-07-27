@@ -1,4 +1,4 @@
-export const translationEn = {
-    "Username": "Username",
-    "Password": "Password"
-};
+export const translationEn = [
+    "Username",
+    "Password"
+];
