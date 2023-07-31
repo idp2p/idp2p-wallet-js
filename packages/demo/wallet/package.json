@@ -1,5 +1,5 @@
 {
-  "name": "idp2p-wallet-demo",
+  "name": "idp2p-demo-wallet",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@picocss/pico": "^1.5.10",
-    "@idp2p/wallet-react-core": "0.0.0"
+    "@idp2p/wallet-core": "0.0.0",
+    "@idp2p/wallet-react": "0.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.1",

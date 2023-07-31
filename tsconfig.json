@@ -2,6 +2,9 @@
     "files": [],
     "references": [
       { "path": "packages/core" },
-      { "path": "packages/demo" }
+      { "path": "packages/react" },
+      { "path": "packages/extension" },
+      { "path": "packages/demo/wallet" },
+      { "path": "packages/demo/client" }
     ]
   }

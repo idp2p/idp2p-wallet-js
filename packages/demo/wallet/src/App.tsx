@@ -1,4 +1,4 @@
-import { useCreateWalletForm, useWallet } from "@idp2p/wallet-react-core";
+import { useCreateWalletForm, useWallet } from "@idp2p/wallet-react";
 import errorMsg from "./components/errorMsg";
 
 function App() {
