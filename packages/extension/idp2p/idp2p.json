@@ -1,0 +1,9 @@
+{
+  "name": "idp2p",
+  "description": "Idp2p app",
+  "path": "C:\\Users\\adem_\\OneDrive\\Belgeler\\repos\\idp2p\\idp2p-wallet-leptos\\target\\debug\\idp2p-wallet-app.exe",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://nhpdcmiggajonchbmjeafhgobddefjma/"
+  ]
+}

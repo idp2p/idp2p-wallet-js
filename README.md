@@ -1,2 +1,3 @@
-# idp2p-wallet-react
-Idp2p wallet react core
+# idp2p-wallet-js
+
+Idp2p wallet js

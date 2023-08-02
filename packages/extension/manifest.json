@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "Idp2p Extension",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*",
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "content.css"
+            ]
+        }
+    ],
+    "permissions": [
+        "nativeMessaging"
+    ]
+}

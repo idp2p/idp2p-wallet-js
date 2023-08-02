@@ -1,0 +1,3 @@
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Software\Google\Chrome\NativeMessagingHosts\idp2p]
+@="C:\\Users\\adem_\\OneDrive\\Belgeler\\repos\\idp2p\\idp2p-wallet-js\\packages\\extension\\idp2p\\idp2p.json"
